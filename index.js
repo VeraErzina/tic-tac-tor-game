@@ -1,16 +1,16 @@
-let currentPlayer = 'X'; // создаем переменную стартового игрока
-let gameBoard = ['', '', '', '', '', '', '', '', '']; // создаем массив игрового поля 3\3
-let gameActive = true; // создаем переменную продолжения игры
-const cells = document.querySelectorAll('.cell') // конст переменная всех ячеек игры 
+let currentPlayer = 'X'; 
+let gameBoard = ['', '', '', '', '', '', '', '', '']; 
+let gameActive = true; 
+const cells = document.querySelectorAll('.cell') 
 const winConditions = [
-    [0, 1, 2], // Верхний ряд
-    [3, 4, 5], // Средний ряд
-    [6, 7, 8], // Нижний ряд
-    [0, 3, 6], // Левый столбец
-    [1, 4, 7], // Средний столбец
-    [2, 5, 8], // Правый столбец
-    [0, 4, 8], // Диагональ слева направо
-    [2, 4, 6]  // Диагональ справа налево
+    [0, 1, 2], 
+    [3, 4, 5], 
+    [6, 7, 8], 
+    [0, 3, 6], 
+    [1, 4, 7], 
+    [2, 5, 8], 
+    [0, 4, 8], 
+    [2, 4, 6]  
   ];
 const resetButton = document.getElementById('resetButton');
 
@@ -21,8 +21,8 @@ function PlayerTurn(clickedCellIndex){
 }
 
 function cellClicked(Event){
-    const clickedCell = Event.target; // в переменную мы мы передаем что ячейка была нажата
-    const clickedCellIndex = parseInt(clickedCell.id.replace('cell-', '')) - 1; // узнаем какая яцейка была нажата чтобы передать это в массив
+    const clickedCell = Event.target; 
+    const clickedCellIndex = parseInt(clickedCell.id.replace('cell-', '')) - 1; 
 
     if (gameBoard[clickedCellIndex] !== '' || !gameActive) {
         return;
